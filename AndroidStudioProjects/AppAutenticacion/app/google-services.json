@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "525243395320",
+    "project_id": "appautenticacion-5de0e",
+    "storage_bucket": "appautenticacion-5de0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525243395320:android:ecde8ee0c6877c9323df0d",
+        "android_client_info": {
+          "package_name": "com.example.appautenticacion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN2SEq6TLh2gCNlwoFmbnFIKaSEQBvwHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
