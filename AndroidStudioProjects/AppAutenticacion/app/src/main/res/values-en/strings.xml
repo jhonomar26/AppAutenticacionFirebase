@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppAutenticacion</string>
+    <string name="login_title">Login</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="register_text">Don\'t have an account? Sign up</string>
+    <!-- General strings -->
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="already_have_account">Already have an account? Log in</string>
+
+    <!-- Messages -->
+    <string name="fill_all_fields">Please fill in all fields</string>
+    <string name="registration_successful">Registration successful</string>
+    <string name="registration_error">Registration error: %1$s</string>
+    <string name="welcome_message">Welcome!</string>
+    <string name="logout">Logout</string>
+    <string name="full_name">Full name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="reset_password_instruction">Enter your email address to reset your password.</string>
+    <string name="recover">Recover</string>
+
+</resources>

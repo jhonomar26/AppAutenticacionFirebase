@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">AppAutenticacion</string>
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="email_hint">Correo Electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="register_text">¿No tienes una cuenta? Regístrate</string>
+    <string name="register">Registrarse</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="already_have_account">¿Ya tienes una cuenta? Inicia sesión</string>
+    <!-- Messages -->
+    <string name="fill_all_fields">Por favor llena todos los campos</string>
+    <string name="registration_successful">Registro exitoso</string>
+    <string name="registration_error">Error en el registro: %1$s</string>
+    <string name="welcome_message">¡Bienvenido!</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="full_name">Nombre completo</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="reset_password_instruction">Ingresa tu correo para reestablecer la contraseña</string>
+    <string name="recover">Recuperar</string>
+
 </resources>
