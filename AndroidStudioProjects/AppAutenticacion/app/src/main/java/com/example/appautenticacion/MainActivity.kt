@@ -1,35 +1,59 @@
 package com.example.appautenticacion
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import com.example.appautenticacion.R
+import com.google.android.material.bottomappbar.BottomAppBarTopEdgeTreatment
+import com.google.firebase.auth.FirebaseAuth
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+class MainActivity : AppCompatActivity() {
 
-    private lateinit var mMap: GoogleMap
+    private lateinit var textViewWelcome: TextView
+    private lateinit var buttonLogout: Button
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var buttonOpenMap: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Obtener el SupportMapFragment y ser notificado cuando el mapa esté listo para usarse
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+        mAuth = FirebaseAuth.getInstance()
+
+        textViewWelcome = findViewById(R.id.textViewWelcome)
+        buttonLogout = findViewById(R.id.buttonLogout)
+        buttonOpenMap = findViewById(R.id.buttonOpenMap)
+        buttonOpenMap.setOnClickListener {
+            startActivity(Intent(this, MapsActivity::class.java))
+        }
+
+
+        // Verificar si el usuario está autenticado
+        val user = mAuth.currentUser
+        if (user == null) {
+            // Si no hay usuario autenticado, redirigir a LoginActivity
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+            return
+        }
+
+        textViewWelcome.text = "Bienvenido, ${user.email}!"
+
+        buttonLogout.setOnClickListener {
+            logoutUser()
+        }
+
+
     }
 
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-
-        // Agregar un marcador en una ubicación y mover la cámara
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+    private fun logoutUser() {
+        mAuth.signOut()
+        Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_SHORT).show()
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 }
