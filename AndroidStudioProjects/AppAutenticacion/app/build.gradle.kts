@@ -52,4 +52,8 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.android.gms:play-services-maps:19.0.0")
+
+    //implementation("libs.osmdroid.android")
+    //implementation("libs.osmdroid.mapsforge")
+
 }

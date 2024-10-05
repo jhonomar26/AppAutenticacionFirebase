@@ -31,39 +31,37 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Definir los puntos que forman el polígono (por ejemplo, una zona en una ciudad)
         val areaPermitida = listOf(
             //1.219395, -77.278107
-
             //1.218681, -77.277443
-
             //1.213349, -77.275381
             //1.212433, -77.275587
-            //1.210391, -77.273932
 
+            //1.210223, -77.273572
             //1.208348, -77.276356
             //1.206582, -77.281174
-
             //1.210916, -77.283201
             //1.211664, -77.281549
             //1.217479, -77.284044
-            //1.218173, -77.283382
-            //1.217330, -77.282362
+            //1.217654, -77.283881
+            // 1.216724, -77.283046
+            //1.217326, -77.282343
+
+
             LatLng(1.219395, -77.278107),  // Carrera 29 calle 21, punto 1
-
             LatLng(1.218681, -77.277443),  // Carrera 29 calle 21, punto 1
-
             LatLng(1.213349, -77.275381),  // Carrera 29 calle 21, punto 1
             LatLng(1.212433, -77.275587),  // Carrera 29 calle 21, punto 1
-            LatLng(1.210391, -77.273932),  // Carrera 29 calle 21, punto 1
+
+            LatLng(1.210223, -77.273572),  // Carrera 29 calle 21, punto 1
 
             LatLng(1.208348, -77.276356),  // Carrera 29 calle 21, punto 1
             LatLng(1.206582, -77.281174),  // Carrera 19, calle 21
-
-
             LatLng(1.206600, -77.281224),  // Carrera 19, calle 12
             LatLng(1.210916, -77.283201),   // Carrera 23, calle 12
             LatLng(1.211664, -77.281549),   // Carrera 23, calle 14
             LatLng(1.217479, -77.284044), //Carrera 30, calle 14
-            LatLng(1.218173, -77.283382), //Carrera 30a, calle 16
-            LatLng(1.217330, -77.282362), //Carrera 29, calle 16
+            LatLng(1.217654, -77.283881), //Carrera 30a, calle 16
+            LatLng(1.216724, -77.283046), //Carrera 29, calle 16
+            LatLng(1.217326, -77.282343), //Carrera 29, calle 16
 
         )
 
