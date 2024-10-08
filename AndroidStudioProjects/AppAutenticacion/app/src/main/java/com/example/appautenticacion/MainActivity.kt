@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var buttonLogout: Button
     private lateinit var mAuth: FirebaseAuth
     private lateinit var buttonOpenMap: Button
+    private lateinit var buttonOpenMapOSM: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         textViewWelcome = findViewById(R.id.textViewWelcome)
         buttonLogout = findViewById(R.id.buttonLogout)
         buttonOpenMap = findViewById(R.id.buttonOpenMap)
+        buttonOpenMapOSM = findViewById(R.id.buttonOpenMapOSM)  // Asignar el botón para OSM
+
         buttonOpenMap.setOnClickListener {
             startActivity(Intent(this, MapsActivity::class.java))
         }
@@ -45,6 +48,17 @@ class MainActivity : AppCompatActivity() {
 
         buttonLogout.setOnClickListener {
             logoutUser()
+        }
+
+
+        // Abrir OpenStreetMap
+        buttonOpenMapOSM.setOnClickListener {
+            startActivity(
+                Intent(
+                    this,
+                    OSMMapsActivity::class.java
+                )
+            )  // Llamada a la nueva actividad OSM
         }
 
 

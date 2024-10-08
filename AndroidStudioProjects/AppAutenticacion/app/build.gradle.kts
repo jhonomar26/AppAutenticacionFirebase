@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.preference.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -54,6 +55,6 @@ dependencies {
     implementation("com.google.android.gms:play-services-maps:19.0.0")
 
     //implementation("libs.osmdroid.android")
-    //implementation("libs.osmdroid.mapsforge")
+    implementation(libs.osmdroid.mapsforge)
 
 }
