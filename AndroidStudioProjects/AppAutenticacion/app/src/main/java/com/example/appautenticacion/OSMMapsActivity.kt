@@ -16,10 +16,13 @@ import org.osmdroid.util.GeoPoint
 import org.osmdroid.util.BoundingBox
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
 
+//Hereda de AppCompatActivity e implementa MapListener
 class OSMMapsActivity : AppCompatActivity(), MapListener {
 
     private lateinit var mapView: MapView
     private lateinit var myLocationOverlay: MyLocationNewOverlay
+
+    //Manejar el zoom y el centro del mapa
     private lateinit var mapController: IMapController
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +38,11 @@ class OSMMapsActivity : AppCompatActivity(), MapListener {
         setContentView(R.layout.activity_osm_maps)
 
         // Inicializar y configurar el mapView
+        //Lienzo del mapa
         mapView = findViewById(R.id.osmMap)
+        //(Como se vera el mapa)
         mapView.setTileSource(TileSourceFactory.MAPNIK)
+        //(Hacer zoom al mapa)
         mapView.setMultiTouchControls(true)
         mapView.isTilesScaledToDpi = true
 
@@ -44,7 +50,7 @@ class OSMMapsActivity : AppCompatActivity(), MapListener {
         mapController = mapView.controller
         mapController.setZoom(16.0) // Aumentamos el zoom inicial
 
-        // Configurar la ubicación del usuario
+        //Ubicación en el mapa, mas un punto azul que nos sigue
         myLocationOverlay = MyLocationNewOverlay(GpsMyLocationProvider(this), mapView)
         myLocationOverlay.enableMyLocation()
         myLocationOverlay.enableFollowLocation()
@@ -81,10 +87,12 @@ class OSMMapsActivity : AppCompatActivity(), MapListener {
         mapView.overlays.add(polygon)
 
         // Centrar el mapa en el polígono
+        //Crea una caja rectangular que va contener todos los puntos
         val boundingBox = BoundingBox.fromGeoPoints(areaPermitida)
         mapView.post {
+            //Ajusta el zoom de la camara automaticamente
             mapView.zoomToBoundingBox(boundingBox, true, 100)
-            // Centrar en un punto específico del polígono
+            // Centrar en un punto específico del polígono: Centra el mapa en un punto especifico
             mapController.setCenter(GeoPoint(1.213349, -77.275381))
         }
 
@@ -103,7 +111,10 @@ class OSMMapsActivity : AppCompatActivity(), MapListener {
     }
 
     override fun onScroll(event: ScrollEvent?): Boolean {
-        Log.d("Map Scroll", "Lat: ${event?.source?.mapCenter?.latitude}, Lon: ${event?.source?.mapCenter?.longitude}")
+        Log.d(
+            "Map Scroll",
+            "Lat: ${event?.source?.mapCenter?.latitude}, Lon: ${event?.source?.mapCenter?.longitude}"
+        )
         return true
     }
 
