@@ -56,5 +56,5 @@ dependencies {
 
     //implementation("libs.osmdroid.android")
     implementation(libs.osmdroid.mapsforge)
-
+    implementation(libs.google.play.services.location)
 }

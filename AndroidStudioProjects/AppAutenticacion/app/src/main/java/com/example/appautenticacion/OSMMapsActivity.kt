@@ -86,6 +86,7 @@ class OSMMapsActivity : AppCompatActivity(), MapListener {
         mapView.overlays.add(myLocationOverlay)
         mapView.overlays.add(polygon)
 
+        
         // Centrar el mapa en el polígono
         //Crea una caja rectangular que va contener todos los puntos
         val boundingBox = BoundingBox.fromGeoPoints(areaPermitida)

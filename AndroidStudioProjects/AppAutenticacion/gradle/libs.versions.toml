@@ -26,6 +26,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 osmdroid-mapsforge = { module = "org.osmdroid:osmdroid-android", version.ref = "osmdroid" }
 androidx-preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preferenceKtx" }
+google-play-services-location = { group = "com.google.android.gms", name = "play-services-location", version = "21.0.1" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
